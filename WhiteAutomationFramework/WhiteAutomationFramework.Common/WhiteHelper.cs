@@ -5,10 +5,12 @@ using TestStack.White.UIItems.WindowItems;
 using WhiteAutomationFramework.Driver;
 
 namespace WhiteAutomationFramework.Common
-{
+{/// <summary>
+/// This class will contain all the methods for interacting with the different element
+/// of the application being tested.
+/// </summary>
     public class WhiteHelper
-    {
-      
+    {      
         #region ElementMethods
         //TextBox
         public static string returnText(TextBox textBox)
@@ -25,9 +27,9 @@ namespace WhiteAutomationFramework.Common
             return window.Title;
         }
         //Button
-        public static Button getButton(String id)
+        public static Button getButton(String input)
         {
-            return  (Button)WindowDriver.Instance.Get(SearchCriteria.ByText(id));
+            return  (Button)WindowDriver.Instance.Get(SearchCriteriaHelper.searchByText(input));
         }
         public static void buttonClick(Button button)
         {
@@ -47,14 +49,17 @@ namespace WhiteAutomationFramework.Common
         {
             return label.Text;
         }
-        #endregion
 
-        #region Search Criteria
-        public static SearchCriteria searchByID(String id)
+
+        //Switching Windows
+        public static Window switchWindow(string newWindowTitle)
         {
-            return SearchCriteria.ByAutomationId(id);
+            return  WindowDriver.switchWindow(newWindowTitle);
+            
         }
         #endregion
+
+       
 
     }
 }

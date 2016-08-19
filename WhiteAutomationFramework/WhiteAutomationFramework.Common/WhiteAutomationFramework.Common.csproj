@@ -46,10 +46,11 @@
       <HintPath>..\packages\TestStack.White.0.13.3\lib\net40\TestStack.White.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchCriteriaHelper.cs" />
     <Compile Include="WhiteHelper.cs" />
   </ItemGroup>
   <ItemGroup>

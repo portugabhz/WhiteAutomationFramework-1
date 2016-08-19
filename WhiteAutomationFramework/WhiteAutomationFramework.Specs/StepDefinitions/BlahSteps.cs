@@ -28,7 +28,8 @@ namespace WhiteAutomationFramework.Specs.StepDefinitions
         [Then(@"the addres book should be displayed")]
         public void ThenTheAddresBookShouldBeDisplayed()
         {
-            Thread.Sleep(5000);
+            WhiteHelper.switchWindow("Address Book");
+            Assert.AreEqual("Address Book",WhiteHelper.getWindowTitle(WindowDriver.Instance));
         }
     }
 }
