@@ -18,7 +18,7 @@ namespace WhiteAutomationFramework.Driver
         public static string applicationTitle { get; set; }
 
 
-        public static Window Instance
+        public static Window Instance 
         {
             get { return window ?? (window = grabWindow()); }
         }
