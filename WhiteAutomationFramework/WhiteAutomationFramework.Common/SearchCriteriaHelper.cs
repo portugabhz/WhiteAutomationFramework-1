@@ -34,6 +34,7 @@ namespace WhiteAutomationFramework.Common
         {
             return SearchCriteria.ByControlType(controlType);
         }
+
    
         #endregion
     }

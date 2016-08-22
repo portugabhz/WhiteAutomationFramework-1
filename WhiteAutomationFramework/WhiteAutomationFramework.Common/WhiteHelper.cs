@@ -1,6 +1,7 @@
 ﻿using System;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
+using TestStack.White.UIItems.MenuItems;
 using TestStack.White.UIItems.WindowItems;
 using WhiteAutomationFramework.Driver;
 
@@ -10,7 +11,7 @@ namespace WhiteAutomationFramework.Common
 /// of the application being tested.
 /// </summary>
     public class WhiteHelper
-    {      
+    {
         #region ElementMethods
         //TextBox
         public static string returnText(TextBox textBox)
@@ -26,14 +27,27 @@ namespace WhiteAutomationFramework.Common
         {
             return window.Title;
         }
+        public static string returnTextFromTextField(string id)
+        {
+            Label label = (Label)WindowDriver.Instance.Get(SearchCriteriaHelper.searchByID(id));
+            return label.Text;
+        }
         //Button
         public static Button getButton(String input)
         {
-            return  (Button)WindowDriver.Instance.Get(SearchCriteriaHelper.searchByText(input));
+            return (Button)WindowDriver.Instance.Get(SearchCriteriaHelper.searchByText(input));
+        }
+        public static Menu getMenu(string input)
+        {
+            return (Menu)WindowDriver.Instance.Get(SearchCriteriaHelper.searchByText(input));
         }
         public static void buttonClick(Button button)
         {
             button.Click();
+        }
+        public static void menuClick(Menu menu)
+        {
+            menu.Click();
         }
         //CheckBox 
         public static bool checkBoxIsSelected(CheckBox checkBox)
@@ -54,12 +68,11 @@ namespace WhiteAutomationFramework.Common
         //Switching Windows
         public static Window switchWindow(string newWindowTitle)
         {
-            return  WindowDriver.switchWindow(newWindowTitle);
-            
+            return WindowDriver.switchWindow(newWindowTitle);
+
         }
         #endregion
 
-       
 
     }
 }

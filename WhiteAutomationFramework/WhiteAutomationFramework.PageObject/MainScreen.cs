@@ -12,15 +12,40 @@ namespace WhiteAutomationFramework.PageObject
 {
     public class MainScreen
     {
-        public static Button writeButton { get { return WhiteHelper.getButton("Write"); } }
-        public static Button addressButton { get { return WhiteHelper.getButton("Address Book"); } }
-        public static void clickAddressButton()
+        public static Button one { get { return WhiteHelper.getButton("1"); } }
+        public static Button two { get { return WhiteHelper.getButton("2"); } }
+        public static Button plus { get { return WhiteHelper.getButton("+"); } }
+        public static Button equal { get { return WhiteHelper.getButton("="); } }
+        public static string result { get { return WhiteHelper.returnTextFromTextField("150"); } }
+
+        public static Menu mode { get { return WhiteHelper.getMenu("Mode"); } }
+        public static Menu programmer { get { return WhiteHelper.getMenu("Programmer"); } }
+
+
+        public static void click1()
         {
-            WhiteHelper.buttonClick(addressButton);
+            WhiteHelper.buttonClick(one);
         }
-        public static void clickWriteButton()
+        public static void click2()
         {
-            WhiteHelper.buttonClick(writeButton);
+            WhiteHelper.buttonClick(two);
+        }
+        public static void clickplus()
+        {
+            WhiteHelper.buttonClick(plus);
+        }
+        public static void clickEquals()
+        {
+            WhiteHelper.buttonClick(equal);
+        }
+        public static string verifyResult()
+        {
+            return result;
+        }
+        public static void clickProgrammer()
+        {
+            WhiteHelper.menuClick(mode);
+            WhiteHelper.menuClick(programmer);
         }
     }
 }

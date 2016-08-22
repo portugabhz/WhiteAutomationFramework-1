@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using TestStack.White;
 using TestStack.White.UIItems.WindowItems;
+using TestStack.White.Utility;
 
 namespace WhiteAutomationFramework.Driver
 {
@@ -28,11 +30,19 @@ namespace WhiteAutomationFramework.Driver
             window= application.GetWindow(applicationTitle);
             return window;
         }
+        //public static Window switchWindow(string newWindowTitle)
+        //{
+        //    window = application.GetWindow(newWindowTitle);
+        //    return window;
+        //} 
+
         public static Window switchWindow(string newWindowTitle)
         {
-            window = application.GetWindow(newWindowTitle);
+            window = Retry.For(() => application.GetWindows().First(x => x.Title.Contains(newWindowTitle)),
+                TimeSpan.FromSeconds(5));
             return window;
         }
+
         public static void closeApplication()
         {
             if (application != null) application.Close();
