@@ -7,8 +7,8 @@ namespace WhiteAutomationFramework.Driver
     /// <summary>
     /// This class is responsible for getting the instance of the application
     /// window being tested. Switching between different windows done 
-    /// here using the tile of the new window
-    /// and the instance is then updated accordingly
+    /// here using the title of the new window
+    /// and the window instance is then updated accordingly.
     /// </summary>
     public static class WindowDriver
     {
@@ -37,8 +37,5 @@ namespace WhiteAutomationFramework.Driver
         {
             if (application != null) application.Close();
         }
-
-        
-
     }
 }

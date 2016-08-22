@@ -8,7 +8,7 @@ using TestStack.White.UIItems.Finders;
 
 namespace WhiteAutomationFramework.Common
 {/// <summary>
-/// This class is responsible for the different search criteria function
+/// This class is responsible for the different search criteria function.
 /// </summary>
     class SearchCriteriaHelper
     {
@@ -34,6 +34,7 @@ namespace WhiteAutomationFramework.Common
         {
             return SearchCriteria.ByControlType(controlType);
         }
+   
         #endregion
     }
 }
